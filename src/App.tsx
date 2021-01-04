@@ -22,27 +22,36 @@ const App = () => {
     newTodo.trim() !== "" &&
       setTodos([...todos, { text: newTodo, complete: false }])
   }
+  const removeAllTodo = () => {
+    setTodos(todos.filter(todo => todo.complete !== true))
+  }
+  // const removeOneTodo:RemoveOneTodo = (deletedTodo) => {
+  //   console.log(deletedTodo)
+  //   setTodos(todos.filter(todo => todo.text !== deletedTodo))
+  // }
 
   return (
     <div className="App container">
-      <AddTodoForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleComplete={toggleComplete} />
-      {/* <Tabs id="uncontrolled-tab-example">
-        <Tab className="tab_container" eventKey="home" title="All">
-          <h1>Tab1</h1>
-
-          
-
+      <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
+        <Tab eventKey="all" title="All">
+          <div className="tab_container">
+            <AddTodoForm addTodo={addTodo} />
+            <TodoList todos={todos} toggleComplete={toggleComplete} />
+          </div>
         </Tab>
-
-
         <Tab eventKey="active" title="Active">
-          <h1>Tab2</h1>
+          <div className="tab_container">
+            <AddTodoForm addTodo={addTodo} />
+            <TodoList isComplete={false} todos={todos} toggleComplete={toggleComplete} />
+          </div>
         </Tab>
         <Tab eventKey="completed" title="Completed">
-          <h1>Tab3</h1>
+          <div className="tab_container">
+            <TodoList isComplete={true} todos={todos} toggleComplete={toggleComplete} />
+            <button onClick={removeAllTodo} className="btn btn-danger">delete all</button>
+          </div>
         </Tab>
-      </Tabs> */}
+      </Tabs>
     </div>
   );
 }

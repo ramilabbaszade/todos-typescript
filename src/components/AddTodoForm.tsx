@@ -15,10 +15,10 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
         setNewTodo("");
     }
     return (
-        <div>
+        <div className="my-2">
             <form>
                 <input value={newTodo} onChange={handleChange} type="text" placeholder="add details" />
-                <button className="mt-2" onClick={handleSubmit} type="submit">Add</button>
+                <button className="ml-2 btn btn-primary" onClick={handleSubmit} type="submit">Add</button>
             </form>
         </div>
     )

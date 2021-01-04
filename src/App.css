@@ -1,6 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.complete{
-  text-decoration: dotted;
+.complete {
+  text-decoration: line-through;
+}
+
+.tab_container{
+  min-width:300px;
 }
