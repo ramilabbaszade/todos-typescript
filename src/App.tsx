@@ -48,7 +48,10 @@ const App = () => {
         <Tab eventKey="completed" title="Completed">
           <div className="tab_container">
             <TodoList isComplete={true} todos={todos} toggleComplete={toggleComplete} />
-            <button onClick={removeAllTodo} className="btn btn-danger">delete all</button>
+            <div className="deleteContainer">
+              <button onClick={removeAllTodo} className="btn btn-danger deleteBtn">delete all</button>
+
+            </div>
           </div>
         </Tab>
       </Tabs>

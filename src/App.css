@@ -18,3 +18,7 @@
 .tab_container{
   min-width:300px;
 }
+.deleteContainer{
+  margin-top: 1rem;
+  text-align: right;
+}
